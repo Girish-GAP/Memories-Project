@@ -1,10 +1,11 @@
 import * as api from '../../api/index'
+import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../../constants/actionTypes';
 
 // Action Creators
 export const getPosts = () => async (dispatch) => {
     try {
         const { data } = await api.fetchPosts();
-        dispatch({ type: 'FETCH_ALL', payload: data });
+        dispatch({ type: FETCH_ALL, payload: data });
     } catch (error) {
         console.log(error.message);
     }
@@ -19,7 +20,7 @@ export const createPost = (post) =>
             const { data } = await api.createPost(post) // making post api request to backend server
 
             // after getting the data from backend 
-            dispatch({ type: 'CREATE', payload: data });
+            dispatch({ type: CREATE, payload: data });
         } catch (error) {
             console.log(error);
         }
@@ -30,7 +31,7 @@ export const updatePost = (id, postData) =>
         try {
             const {data} = await api.updatePost(id,postData);     // returning updated post
 
-            dispatch({ type: 'UPDATE', payload: data });
+            dispatch({ type: UPDATE, payload: data });
         }
         catch (error) {
             console.log(error);     // never use error.message use error becuase it's give more info
@@ -41,7 +42,7 @@ export const deletePost = (id) =>
     async (dispatch) => {
         try{
             await api.deletePost(id);
-            dispatch({type : 'DELETE', payload : id});
+            dispatch({type : DELETE, payload : id});
         }
         catch(error){
             console.log(error);
@@ -54,7 +55,7 @@ export const likePost = (id) =>
     async (dispatch) => {
         try{
             const {data} = await api.likePost(id);
-            dispatch({type : 'LIKE', payload : data});
+            dispatch({type : UPDATE, payload : data});
         }catch(error){
             console.log(error);
         }

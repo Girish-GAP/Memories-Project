@@ -15,6 +15,9 @@
 // 
 
 
+// As a good practice we don't use the strings for action dispatch becuase if we mispelled it then
+// no way to find error so we use constants instead of simple strings.
+
 
 /*
 
