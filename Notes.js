@@ -13,3 +13,14 @@
 // REDUX IMPLEMENTATIONS :
 // - we will intitate the redux from src/index.js file
 // 
+
+
+
+/*
+
+// Add Functionalities :
+
+- After created and updated the momory the pop up at center with right green mark with success msg
+
+
+*/
