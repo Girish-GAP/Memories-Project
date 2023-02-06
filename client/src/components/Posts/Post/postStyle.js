@@ -1,6 +1,7 @@
 import {styled} from '@mui/material/styles'
 import {Card , CardActions , CardContent , CardMedia , Button , Typography , Box} from '@mui/material'
 
+
 export const CardMediaS = styled(CardMedia)({
   height: "0",
   paddingTop: '56.25%',

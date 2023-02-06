@@ -7,3 +7,7 @@ export const createPost = (newPost) => axios.post(  // newPost is the entire pos
                                                     url // the end point
                                                     , newPost // the data we are sending
                                                 );
+
+export const updatePost = (id, postData) => axios.patch(`${url}/${id}`, postData);
+
+export const deletePost = (id) => axios.delete(`${url}/${id}`);
