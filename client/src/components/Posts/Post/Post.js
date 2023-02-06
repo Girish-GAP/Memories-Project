@@ -5,10 +5,16 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import moment from 'moment'
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-
 import { CardS, CardMediaS, CardActionsS, Box1S, Box2S, Box3S } from './postStyle'
+import { useDispatch } from 'react-redux'
+import { deletePost } from '../../../state/actions/posts'
+
+
 
 const Post = ({ post, setCurrentId}) => {
+
+    const dispatch = useDispatch();
+
     return (
         <Card>
             <CardMediaS image={post.selectedFile} />
@@ -50,7 +56,12 @@ const Post = ({ post, setCurrentId}) => {
                     </div>
 
 
-                    <Button size="small" color="primary" onClick={() => { }}>
+                    <Button size="small" color="primary" 
+                    
+                        onClick={() => { 
+                            dispatch(deletePost(post._id));
+                         }}>
+
                         <DeleteIcon fontSize='small' />
                         Delete
                     </Button>
