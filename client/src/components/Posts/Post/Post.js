@@ -8,6 +8,7 @@ import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import { CardS, CardMediaS, CardActionsS, Box1S, Box2S, Box3S } from './postStyle'
 import { useDispatch } from 'react-redux'
 import { deletePost, likePost } from '../../../state/actions/posts'
+import { useEffect, useState } from 'react';
 
 
 
@@ -33,7 +34,7 @@ const Post = ({ post, setCurrentId}) => {
                 <Typography variant='h5' gutterBottom>{post.title}</Typography>
 
                 <CardContent>
-                    <Typography variant='h5' gutterBottom>{post.message}</Typography>
+                    <Typography variant='body2' color = "textSecondary" component = "p" >{post.message}</Typography>
                 </CardContent>
 
                 <CardActions>
@@ -44,7 +45,7 @@ const Post = ({ post, setCurrentId}) => {
                         }}>
 
                         <ThumbUpIcon fontSize='small' />
-                        Like
+                        &nbsp; Like &nbsp;
                         {post.likeCount}
                     </Button>
 

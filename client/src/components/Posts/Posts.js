@@ -14,7 +14,7 @@ const Posts = ({currentId, setCurrentId}) =>{
     // console.log(posts);
 
     return(
-        !posts.length ? <CircularProgress /> : (    // if post.length will be 0 then it will shwo circularprogress other wise grid
+        !posts.length ? <CircularProgress /> : (    // if post.length will be 0 then it will show circularprogress other wise grid
             <Grid container alignItems= "stretch" spacing = {3}>
                 {
                     posts.map((post) => (
