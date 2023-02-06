@@ -7,7 +7,7 @@ import moment from 'moment'
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import { CardS, CardMediaS, CardActionsS, Box1S, Box2S, Box3S } from './postStyle'
 import { useDispatch } from 'react-redux'
-import { deletePost } from '../../../state/actions/posts'
+import { deletePost, likePost } from '../../../state/actions/posts'
 
 
 
@@ -37,7 +37,12 @@ const Post = ({ post, setCurrentId}) => {
                 </CardContent>
 
                 <CardActions>
-                    <Button size="small" color="primary" onClick={() => { }}>
+                    <Button size="small" color="primary" 
+                    
+                        onClick={() => { 
+                            dispatch(likePost(post._id))
+                        }}>
+
                         <ThumbUpIcon fontSize='small' />
                         Like
                         {post.likeCount}
