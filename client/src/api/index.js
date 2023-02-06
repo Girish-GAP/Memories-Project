@@ -6,7 +6,7 @@ export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(  // newPost is the entire post
                                                     url // the end point
                                                     , newPost // the data we are sending
-                                                );
+                                                )
 
 export const updatePost = (id, postData) => axios.patch(`${url}/${id}`, postData);
 
