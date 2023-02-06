@@ -22,5 +22,8 @@
 
 - After created and updated the momory the pop up at center with right green mark with success msg
 
+// Remaining parts
+== material ui
+== mobile friendly : 2nd part
 
 */
